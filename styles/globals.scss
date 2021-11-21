@@ -1,0 +1,71 @@
+@use "colors";
+@use "fonts";
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background: colors.$black;
+  color: colors.$white;
+  font-family: fonts.$monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+button,
+[data-style="button"] {
+  border-radius: 0;
+  padding: 0.4em 0.8em;
+  background-color: colors.$white;
+  color: colors.$black;
+  border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  font-family: fonts.$monospace;
+
+  &:hover,
+  &:focus {
+    background-color: colors.$greyLight;
+  }
+
+  &[data-button-style="secondary"] {
+    background-color: colors.$black;
+    color: colors.$white;
+
+    &:hover, &:focus {
+      background-color: colors.$blackAlt;
+    }
+  }
+}
+
+label {
+  display: block;
+}
+
+input {
+  padding: 0.3em 0.4em;
+  font-family: fonts.$monospace;
+}
+
+// inline code
+code {
+  background-color: colors.$blackAlt;
+}
+
+// code blocks
+pre code[class*="language-"] {
+  border: 2px solid colors.$white;
+  font-size: 1rem;
+  text-shadow: none;
+}
+
+* {
+  box-sizing: border-box;
+}

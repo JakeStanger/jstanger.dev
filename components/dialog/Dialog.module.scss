@@ -1,0 +1,33 @@
+@use 'styles/colors';
+
+.container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(colors.$black, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  .dialog {
+    background-color: colors.$white;
+    color: colors.$black;
+    padding: 1em;
+    min-width: 300px;
+    max-width: 800px;
+    position: relative;
+    cursor: auto;
+
+    h1 {
+      margin: 0 0 0.5em;
+    }
+
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}

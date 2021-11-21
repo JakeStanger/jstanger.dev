@@ -1,0 +1,72 @@
+@use 'styles/colors';
+
+.splash {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  min-height: 100vh;
+  z-index: 1;
+  position: relative;
+
+  .header {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+
+    font-size: calc(36px + 7vw);
+    font-weight: 300;
+    margin: 0;
+
+    .cursor {
+      animation: blink 1s steps(1) infinite;
+      @keyframes blink {
+        50% {
+          color: transparent;
+        }
+      }
+    }
+  }
+
+  .links {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    font-size: calc(100% + 0.2vw);
+    margin-bottom: 30px;
+
+    .link:hover {
+      text-decoration: underline;
+    }
+  }
+
+  .tagline {
+    display: flex;
+    justify-content: center;
+    color: colors.$grey;
+
+    > * + * {
+      margin-left: 15px;
+      &::before {
+        content: "·";
+        margin-right: 15px;
+      }
+    }
+
+    @media screen and (max-width: 510px) {
+      flex-direction: column;
+
+      > * {
+        margin-left: 0;
+        margin-top: 10px;
+        text-align: center;
+
+        &::before {
+          content: "";
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

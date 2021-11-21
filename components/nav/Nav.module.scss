@@ -1,0 +1,27 @@
+@use 'styles/colors';
+
+.navigation {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+
+    .link {
+      padding: 20px;
+
+      &.active {
+        text-decoration: underline;
+      }
+    }
+
+    @media screen and (max-width: 620px) {
+      display: flex;
+      flex-direction: column;
+
+      .link {
+        text-align: center;
+        margin-right: 0;
+        padding: 10px 0;
+      }
+    }
+  }

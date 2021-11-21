@@ -1,0 +1,18 @@
+.meta {
+  input,
+  textarea {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  label {
+    margin-top: 10px;
+  }
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

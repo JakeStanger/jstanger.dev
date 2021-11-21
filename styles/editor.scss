@@ -1,0 +1,22 @@
+@use 'colors';
+
+.toastui-editor-dark {
+  .ProseMirror,
+  .toastui-editor-contents *,
+  {
+    color: colors.$white;
+    font-size: 1rem;
+  }
+
+  .toastui-editor-ww-container {
+    background-color: colors.$black;
+  }
+
+  .toastui-editor-contents pre,
+  .toastui-editor-md-code-block-line-background,
+  .token.operator,
+  .toastui-editor-md-code,
+  .toastui-editor-contents code {
+    background-color: colors.$blackAlt;
+  }
+}
