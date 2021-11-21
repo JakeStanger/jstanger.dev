@@ -15,8 +15,8 @@ const Background: React.FC = () => {
 export default Background;
 
 const MAX_SHAPES = 10;
-// const CREATE_CHANCE = 0.02;
-const CREATE_CHANCE = 100;
+const CREATE_CHANCE = 0.02;
+// const CREATE_CHANCE = 100;
 const SHAPES = ["circle", "triangle", "square", "pentagon", "hexagon"];
 const DIRECTIONS = ["left", "right", "top", "bottom"];
 
