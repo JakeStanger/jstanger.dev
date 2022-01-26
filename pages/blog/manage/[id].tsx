@@ -62,7 +62,6 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
   const posts = await admin
     .firestore()
     .collection("posts")
-    .where("published", "==", true)
     .get()
     .then((snapshots) =>
       snapshots.docs.map((doc) => ({ id: doc.id, title: doc.data().title }))
