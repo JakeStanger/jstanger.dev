@@ -3,7 +3,7 @@ import styles from "./Blog.module.scss";
 import Layout from "../../components/layout/Layout";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { admin } from "../../lib/firebase.server";
-import IPost, { RawPost } from '../../lib/schema/IPost';
+import IPost from '../../lib/schema/IPost';
 import { DateTime } from "luxon";
 import { firestore } from "firebase-admin";
 import Timestamp = firestore.Timestamp;
@@ -59,14 +59,14 @@ const BlogPost: NextPage<Props> = ({ post }) => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const id = (context.params?.id as string).split("--")[0];
 
-  const post = await admin
+  const doc = await admin
     .firestore()
     .collection("posts")
     .doc(id)
     .get()
-    .then((doc) => ({...doc.data() as RawPost, id: doc.id}));
+    .then(doc => doc.data())
 
-  if (!post) {
+  if (!doc) {
     return {
       notFound: true,
     };
@@ -78,16 +78,15 @@ export const getStaticProps: GetStaticProps = async (context) => {
     .use(rehypeHighlight)
     .use(rehypeStringify);
 
-  const html = processor.processSync(post.body).value;
+  const html = processor.processSync(doc.body).value;
+  const createdAt = (doc.createdAt as Timestamp).seconds;
+
+  const post = { ...doc, id: doc.id as string, html, createdAt };
 
   return {
     revalidate: 120,
     props: {
-      post: {
-        ...post,
-        body: html,
-        createdAt: (post.createdAt as Timestamp).seconds,
-      },
+      post
     },
   };
 };
