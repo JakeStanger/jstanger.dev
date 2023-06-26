@@ -31,15 +31,6 @@ const Contact: React.FC = () => {
         </div>
 
         <div>Twitter</div>
-        <div>
-          <a
-            href="https://twitter.com/cakestanger"
-            target="_blank"
-            rel="noreferrer"
-          >
-            @cakestanger
-          </a>
-        </div>
         <div>Discord</div>
         <div>
           <a
@@ -47,7 +38,7 @@ const Contact: React.FC = () => {
             target="_blank"
             rel="noreferrer"
           >
-            Cake 🎂#2112
+            @toadmytoad
           </a>
         </div>
       </section>
