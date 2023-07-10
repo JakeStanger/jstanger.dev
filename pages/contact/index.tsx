@@ -30,7 +30,6 @@ const Contact: React.FC = () => {
           </a>
         </div>
 
-        <div>Twitter</div>
         <div>Discord</div>
         <div>
           <a
