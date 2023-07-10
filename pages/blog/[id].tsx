@@ -81,7 +81,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const html = processor.processSync(doc.body).value;
   const createdAt = (doc.createdAt as Timestamp).seconds;
 
-  const post = { ...doc, id: doc.id as string, html, createdAt };
+  const post = { ...doc, id, html, createdAt };
 
   return {
     revalidate: 120,
