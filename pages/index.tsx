@@ -37,8 +37,7 @@ const Home: NextPage = () => {
             </a>
           </div>
           <div className={styles.tagline}>
-            <div>Web Developer</div>
-            <div>DevOps Engineer</div>
+            <div>Full Stack Developer</div>
             <div>Linux Nerd</div>
           </div>
         </section>

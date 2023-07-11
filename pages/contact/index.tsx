@@ -1,16 +1,16 @@
-import React from "react";
-import styles from "./Contact.module.scss";
-import Layout from "../../components/layout/Layout";
+import React from 'react';
+import styles from './Contact.module.scss';
+import Layout from '../../components/layout/Layout';
 
 const Contact: React.FC = () => {
   return (
-    <Layout title={"Contact"}>
+    <Layout title={'Contact'}>
       <section className={styles.summary}>
         <p>
-          Hi, I&apos;m a professional full-stack web developer
-          specialising/interested in modern technologies like TypeScript, React
-          and Rust. Professionally I work with the SharePoint framework and
-          Azure DevOps. Feel free to contact me using any of the below:
+          Hi, I&apos;m a full stack developer and Linux-er, with an interest in modern technologies
+          like Rust and Typescript and the professional experience to back (most of) it up.
+          Check out my GitHub to see some of my projects, or feel free to reach out to me at any of
+          the below.
         </p>
       </section>
       <section className={styles.contactDetails}>
