@@ -78,10 +78,10 @@ export const getStaticProps: GetStaticProps = async (context) => {
     .use(rehypeHighlight)
     .use(rehypeStringify);
 
-  const html = processor.processSync(doc.body).value;
+  const body = await processor.process(doc.body).then(r => r.value);
   const createdAt = (doc.createdAt as Timestamp).seconds;
 
-  const post = { ...doc, id, html, createdAt };
+  const post = { ...doc, id, body, createdAt };
 
   return {
     revalidate: 120,
